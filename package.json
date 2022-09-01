@@ -1,0 +1,22 @@
+{
+  "name": "responsive-last-challenge",
+  "version": "1.0.0",
+  "description": "Last responsive challenge from Kevin Powell",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k1d12r04/responsive-last-challenge.git"
+  },
+  "author": "Kadir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k1d12r04/responsive-last-challenge/issues"
+  },
+  "homepage": "https://github.com/k1d12r04/responsive-last-challenge#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
