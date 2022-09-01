@@ -12,11 +12,28 @@ html {
 body {
   font-family: "Oswald Bold", sans-serif; }
 
+img {
+  max-width: 100%; }
+
+.container {
+  width: 80%;
+  max-width: 120rem;
+  margin: 0 auto; }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
 .header {
   background-color: #2E323F;
   display: flex;
   justify-content: space-between;
-  padding: 1rem; }
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+.header__logo {
+  filter: drop-shadow(0 0.8rem 1rem black); }
 
 .nav-toggle {
   width: 3.5rem;
@@ -25,13 +42,14 @@ body {
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
-  transition: background-color 0.2s ease; }
+  transition: background-color 0.2s ease-in;
+  box-shadow: 0 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.5); }
   .nav-toggle:hover, .nav-toggle:focus {
-    background-color: #abb0c1; }
+    background-color: #9ca2b7; }
   .nav-toggle:hover .hamburger {
-    background: #e6e7ec; }
+    background: #fff; }
     .nav-toggle:hover .hamburger::before, .nav-toggle:hover .hamburger::after {
-      background: #e6e7ec; }
+      background: #fff; }
 
 .hamburger {
   width: 50%;

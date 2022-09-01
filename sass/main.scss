@@ -19,12 +19,38 @@ body{
   font-family: "Oswald Bold", sans-serif;
 }
 
+img {
+  max-width: 100%;
+}
+
+// utility classes
+
+.container {
+  width: 80%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// layout
 .header {
   background-color: $header-background-color;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
+
+.header__logo{
+  filter: drop-shadow(0 .8rem 1rem black);
+}
+
+
 
 .nav-toggle{
   width: 3.5rem;
@@ -33,17 +59,18 @@ body{
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease-in;
+  box-shadow: 0 .2rem 1rem .2rem rgba(0,0,0,.5);
 
     &:hover,
     &:focus {
-      background-color:lighten($header-background-color, 50%);
+      background-color:lighten($header-background-color, 45%);
     }
     &:hover .hamburger{
-      background: lighten($header-background-color, 70%);
+      background: #fff;
       &::before,
       &::after {
-        background:  lighten($header-background-color, 70%);
+        background:  #fff;
       }
     }
 }
