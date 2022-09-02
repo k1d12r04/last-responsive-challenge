@@ -26,14 +26,62 @@ img {
   align-items: center; }
 
 .header {
-  background-color: #2E323F;
+  background-color: #2e323f;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding-top: 1rem;
-  padding-bottom: 1rem; }
+  padding-bottom: 1rem;
+  text-align: center; }
 
 .header__logo {
-  filter: drop-shadow(0 0.8rem 1rem black); }
+  filter: drop-shadow(0 0.8rem 1rem rgba(0, 0, 0, 0.3)); }
+
+.header__logo__svg {
+  fill: #fff; }
+
+.nav {
+  display: none;
+  transition: all 0.5s ease-in-out; }
+
+.nav__list {
+  list-style: none;
+  padding-top: 3rem; }
+
+.nav__list--secondary {
+  margin-top: 3rem; }
+
+.nav__item {
+  margin-bottom: 0.5rem;
+  padding: 1rem 2rem; }
+
+.nav__link {
+  position: relative;
+  border-radius: 10rem;
+  transition: color 0.25s ease-in-out;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700; }
+  .nav__link:hover {
+    color: #a59678; }
+  .nav__link::after {
+    content: "";
+    display: block;
+    height: 0.4rem;
+    background-color: #a59678;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.75rem;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out; }
+  .nav__link:hover::after {
+    transform: scale(1, 1); }
+
+.nav--visible {
+  display: block; }
 
 .nav-toggle {
   width: 3.5rem;
@@ -45,11 +93,11 @@ img {
   transition: background-color 0.2s ease-in;
   box-shadow: 0 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.5); }
   .nav-toggle:hover, .nav-toggle:focus {
-    background-color: #9ca2b7; }
+    background-color: #f2f2f2; }
   .nav-toggle:hover .hamburger {
-    background: #fff; }
+    background: #a59678; }
     .nav-toggle:hover .hamburger::before, .nav-toggle:hover .hamburger::after {
-      background: #fff; }
+      background: #a59678; }
 
 .hamburger {
   width: 50%;
@@ -60,7 +108,7 @@ img {
 .hamburger::after {
   display: block;
   margin: 0 auto;
-  height: .25rem;
+  height: 0.25rem;
   background: black;
   transition: all 0.2s ease; }
 
