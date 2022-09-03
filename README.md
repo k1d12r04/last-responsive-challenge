@@ -1,2 +1,2 @@
-# responsive-last-challenge
+# last-responsive-challenge
  from Kevin Powell
