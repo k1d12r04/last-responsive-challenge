@@ -176,7 +176,7 @@ img {
   background-color: $primary-light-color;
 
   &__title {
-    font-size: 3.2rem;
+    font-size: clamp(2.5rem, 6vw, 9rem)
   }
   color: $secondary-light-color;
   &__colored-text {
@@ -201,7 +201,7 @@ img {
     padding: 0.8rem 1rem;
     border-radius: 10rem;
     color: $secondary-light-color;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 
     text: {
       decoration: none;
@@ -225,7 +225,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2.5rem;
+    gap: 3rem;
   }
 
   &__text {
@@ -273,6 +273,7 @@ img {
   &__secondary-text {
     text-align: center;
     color: $secondary-light-color;
+    margin-top: 6rem;
     &-box {
       background-color: $primary-dark-color;
       padding: 2rem 3rem;
@@ -358,4 +359,45 @@ img {
   }
 }
 
-// first media breakpoint 595px
+// Media queries
+
+@media only screen and ( min-width: 596px) { 
+  .features__flex{
+    flex-direction: row;
+  }
+  .footer__content--big{
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .main__secondary-text__flex{
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-main{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .footer__content--big{
+    width: 45%;
+    margin-right: 7rem;
+  }
+  .footer__content--small{
+    width: 33%;
+  }
+}
+
+@media only screen and (min-width:1000px) {
+  .main__flex{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .main__secondary-text__flex{
+    flex-direction: column;
+    margin-top: 0;
+  }
+}
