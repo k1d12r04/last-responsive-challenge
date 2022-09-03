@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// variables
+$primary-color: #2e323f;
+$secondary-color: #fff;
+$accent-color: #a59678;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Oswald Bold", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+// utility classes
+
+.container {
+  width: 80%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// layout
+.header {
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.header__logo {
+  filter: drop-shadow(0 0.8rem 1rem rgba(0, 0, 0, 0.3));
+}
+
+.header__logo__svg {
+  fill: $secondary-color;
+}
+
+.nav {
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav__list {
+  list-style: none;
+  padding-top: 3rem;
+}
+
+.nav__list--secondary {
+  margin-top: 3rem;
+}
+
+.nav__item {
+  margin-bottom: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.nav__link {
+  position: relative;
+  border-radius: 10rem;
+  transition: color 0.25s ease-in-out;
+
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+  color: $secondary-color;
+
+  font: {
+    size: 1.8rem;
+    weight: 700;
+  }
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 0.4rem;
+    background-color: $accent-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.75rem;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scale(1, 1);
+  }
+}
+
+.nav--visible {
+  display: block;
+}
+
+.nav-toggle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 50%;
+  background-color: $secondary-color;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  box-shadow: 0 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.5);
+
+  &:hover,
+  &:focus {
+    background-color: darken($secondary-color, 5%);
+  }
+  &:hover .hamburger {
+    background: $accent-color;
+    &::before,
+    &::after {
+      background: $accent-color;
+    }
+  }
+}
+
+.hamburger {
+  width: 50%;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 0.25rem;
+  background: black;
+  transition: all 0.2s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  width: 100%;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
