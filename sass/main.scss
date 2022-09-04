@@ -39,11 +39,14 @@ img {
   margin: 0 auto;
 }
 
+.blur-effect{
+  filter: blur(5px);
+}
+
 // layout
 .header {
   background-color: $primary-dark-color;
   display: flex;
-  flex-direction: column;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
@@ -65,6 +68,11 @@ img {
 
 .nav {
   display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5rem;
+  background-color: $primary-dark-color;
   transition: all 0.5s ease-in-out;
 
   &__list {
@@ -115,6 +123,7 @@ img {
   }
   &--visible {
     display: block;
+    z-index: 100;
   }
 
   &-toggle {
@@ -171,19 +180,19 @@ img {
 }
 
 .hero {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
   background-color: $primary-light-color;
 
   &__title {
-    font-size: clamp(2.5rem, 6vw, 9rem)
+    font-size: clamp(3.5rem, 6vw, 9rem);
   }
   color: $secondary-light-color;
   &__colored-text {
     color: $accent-color;
   }
 
-  &-text{
+  &-text {
     align-self: flex-end;
   }
 
@@ -191,17 +200,17 @@ img {
     font: {
       family: "Montserrat", sans-serif;
       weight: 400;
-      size: 1.5rem;
+      size: 2.4rem;
     }
     margin-bottom: 1.5rem;
   }
   &__btn {
     display: inline-block;
     background-color: $accent-color;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 10rem;
     color: $secondary-light-color;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
 
     text: {
       decoration: none;
@@ -211,15 +220,17 @@ img {
   }
   &__flex {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
   }
+  
 }
 
 .features {
   background-color: #f1f1f1;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 
   &__flex {
     display: flex;
@@ -231,15 +242,15 @@ img {
   &__text {
     text-align: center;
     &__title {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: $accent-color;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
     &__para {
       font: {
         family: "Montserrat", sans-serif;
         weight: 400;
-        size: 1.2rem;
+        size: 1.4rem;
       }
     }
     color: $primary-light-color;
@@ -254,13 +265,13 @@ img {
 
     &__title {
       color: $accent-color;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
     }
     &__para {
       font: {
         family: "Montserrat", sans-serif;
-        size: 1.2rem;
+        size: 1.5rem;
         weight: 400;
       }
       color: $primary-light-color;
@@ -268,6 +279,9 @@ img {
     }
     &__img {
       margin-bottom: 2rem;
+      border-radius: 1rem;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
     }
   }
   &__secondary-text {
@@ -276,8 +290,9 @@ img {
     margin-top: 6rem;
     &-box {
       background-color: $primary-dark-color;
-      padding: 2rem 3rem;
-      // margin-bottom: 2rem;
+      padding: 5rem 3rem 7rem;
+      border-radius: 1.5rem;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
     &__title {
       margin-bottom: 1rem;
@@ -286,7 +301,7 @@ img {
     &__para {
       font: {
         family: "Montserrat", sans-serif;
-        size: 1.2rem;
+        size: 1.4rem;
         weight: 400;
       }
     }
@@ -297,36 +312,37 @@ img {
     }
   }
 }
-
-.footer{
+.footer {
   background-color: $primary-light-color;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  &__title{
+  &__title {
     color: $secondary-light-color;
-    font-size: 2.5rem;
+    font-size: clamp(4rem, 5vw, 6rem);
     margin-bottom: 4rem;
+    text-align: center;
   }
 
-  &-main{
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  &-main {
+    display: grid;
+    row-gap: 3rem;
   }
 
-  &__content__title{
+  &__content__title {
     color: $accent-color;
     margin-bottom: 1rem;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    white-space: nowrap;
   }
 
-  &__content__link{
+  &__content__link {
     position: relative;
     margin-bottom: 2rem;
     text-decoration: none;
+    white-space: nowrap;
     display: block;
     width: fit-content;
-    transition: color .25s ease-in-out;
+    transition: color 0.25s ease-in-out;
     &::after {
       content: "";
       display: block;
@@ -341,19 +357,19 @@ img {
       transition: transform 0.25s ease-in-out;
     }
     &:hover::after {
-      transform: scale(1,1);
+      transform: scale(1, 1);
     }
-    &:hover{
+    &:hover {
       color: $accent-color;
     }
   }
 
   &__content__link,
-  &__content__para{
+  &__content__para {
     font: {
       family: "Montserrat", sans-serif;
       weight: 400;
-      size: 1.2rem;
+      size: 1.4rem;
     }
     color: $secondary-light-color;
   }
@@ -361,43 +377,62 @@ img {
 
 // Media queries
 
-@media only screen and ( min-width: 596px) { 
-  .features__flex{
+@media only screen and (min-width: 596px) {
+  .features__flex {
     flex-direction: row;
-  }
-  .footer__content--big{
-    width: 70%;
   }
 }
 
 @media only screen and (min-width: 700px) {
-  .main__secondary-text__flex{
+  .main__secondary-text__flex {
     flex-direction: row;
+  }
+  .footer-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6rem;
+  }
+  .hero__flex {
+    flex-direction: row;
+  }
+  .hero__btn {
+    padding: 1rem 2.5rem;
+  }
+  .nav-toggle{
+    display: none;
+  }
+  .nav{
+    display: block;
+    position: relative;
+    top: 0;    
+    &__list{
+      display: flex;
+      padding-top: 0;
+      &--primary{
+        display: flex;
+        margin: 0 auto;
+      }
+      &--secondary{
+        display: flex;
+        margin-top: 0;
+      }
+    }
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .footer-main{
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  .footer__content--big{
-    width: 45%;
-    margin-right: 7rem;
-  }
-  .footer__content--small{
-    width: 33%;
-  }
-}
-
-@media only screen and (min-width:1000px) {
-  .main__flex{
+@media only screen and (min-width: 1000px) {
+  .main__flex {
     display: flex;
     align-items: center;
     gap: 3rem;
   }
-  .main__secondary-text__flex{
+  .main__secondary-text__flex {
     flex-direction: column;
     margin-top: 0;
+  }
+
+  .footer-main {
+    grid-template-columns: 3fr 1fr 1fr;
+    column-gap: 8rem;
   }
 }
